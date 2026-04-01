@@ -1,0 +1,278 @@
+/* SECCIÓN PROMOCIONES COMPRA */
+.promociones-compra-section {
+  width: 100%;
+  padding: 80px 40px;
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #1e40af 100%);
+}
+
+.promociones-compra-section .container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.promociones-compra-section h2 {
+  text-align: center;
+  font-size: 42px;
+  font-weight: 900;
+  color: white;
+  margin: 0 0 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.promociones-compra-section .subtitle {
+  text-align: center;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0 50px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+.promociones-compra-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+  margin-bottom: 20px;
+}
+
+.promo-card-compra {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35), 0 4px 16px rgba(0, 0, 0, 0.2);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  background: white;
+  cursor: pointer;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transform: scale(1);
+}
+
+.promo-card-compra:hover {
+  transform: translateY(-16px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4), 0 8px 22px rgba(255, 107, 53, 0.2);
+}
+
+.promo-imagen-wrapper {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  overflow: hidden;
+}
+
+.promo-imagen {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+.promo-card-compra:hover .promo-imagen {
+  transform: scale(1.08);
+}
+
+.promo-imagen::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.15);
+  transition: background 0.3s ease;
+}
+
+.promo-card-compra:hover .promo-imagen::after {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.badge-descuento {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: linear-gradient(135deg, #ff6b35 0%, #ff8c42 100%);
+  color: white;
+  padding: 10px 18px;
+  border-radius: 12px;
+  font-weight: 900;
+  font-size: 18px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 16px rgba(255, 107, 53, 0.4);
+  z-index: 5;
+  transform: scale(1);
+  transition: all 0.3s ease;
+}
+
+.promo-card-compra:hover .badge-descuento {
+  transform: scale(1.1);
+  box-shadow: 0 8px 20px rgba(255, 107, 53, 0.6);
+}
+
+.promo-contenido {
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex-grow: 1;
+  justify-content: space-between;
+  background: white;
+}
+
+.ruta-promo {
+  font-size: 20px;
+  font-weight: 900;
+  color: #1e40af;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
+  text-align: center;
+}
+
+.precios-promo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 12px 0;
+  border-top: 2px solid #f0f0f0;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.precio-original {
+  font-size: 14px;
+  color: #999;
+  text-decoration: line-through;
+  font-weight: 600;
+}
+
+.precio-promocion {
+  font-size: 28px;
+  font-weight: 900;
+  color: #ff6b35;
+  text-shadow: 0 2px 4px rgba(255, 107, 53, 0.2);
+}
+
+.codigo-promo {
+  text-align: center;
+  font-size: 13px;
+  color: #666;
+  margin: 0;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.codigo-promo strong {
+  color: #1e40af;
+  font-weight: 800;
+  font-size: 14px;
+}
+
+.btn-compra-promo {
+  width: 100%;
+  padding: 14px 20px;
+  background: linear-gradient(135deg, #F5DA2E 0%, #fce66d 100%);
+  color: #1a1a1a;
+  border: none;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 20px rgba(245, 218, 46, 0.3);
+  margin-top: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-compra-promo::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transition: left 0.5s ease;
+}
+
+.btn-compra-promo:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(245, 218, 46, 0.5);
+}
+
+.btn-compra-promo:hover::before {
+  left: 100%;
+}
+
+.btn-compra-promo:active {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(245, 218, 46, 0.3);
+}
+
+@media (max-width: 1024px) {
+  .promociones-compra-section {
+    padding: 60px 30px;
+  }
+
+  .promociones-compra-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
+
+  .promo-card-compra {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  }
+
+  .promo-imagen-wrapper {
+    height: 240px;
+  }
+}
+
+@media (max-width: 768px) {
+  .promociones-compra-section {
+    padding: 40px 16px;
+  }
+
+  .promociones-compra-section h2 {
+    font-size: 28px;
+  }
+
+  .promociones-compra-section .subtitle {
+    font-size: 14px;
+    margin-bottom: 30px;
+  }
+
+  .promociones-compra-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .promo-image-wrapper {
+    height: 200px;
+  }
+
+  .promo-contenido {
+    padding: 20px 16px;
+    gap: 12px;
+  }
+
+  .ruta-promo {
+    font-size: 16px;
+  }
+
+  .precio-promocion {
+    font-size: 24px;
+  }
+
+  .btn-compra-promo {
+    padding: 12px 16px;
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,243 @@
+.registro-datos-page {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+}
+
+.pasos-progreso-registro {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.paso-item {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.numero-paso {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #e0e0e0;
+  color: #999;
+  font-size: 24px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.paso-item.completado .numero-paso {
+  background: linear-gradient(135deg, #4caf50, #45a049);
+  color: white;
+}
+
+.paso-item.activo .numero-paso {
+  background: linear-gradient(135deg, #ff9900, #ffa500);
+  color: white;
+  box-shadow: 0 4px 15px rgba(255, 153, 0, 0.4);
+}
+
+.paso-item p {
+  margin: 0;
+  color: #666;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.registro-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px 60px 20px;
+}
+
+.tarjeta-registro {
+  background: white;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.tarjeta-registro h2 {
+  margin: 0 0 30px 0;
+  font-size: 24px;
+  color: #1e40af;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.formulario-registro {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.columnas-formulario {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.columna-izquierda,
+.columna-derecha {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.grupo-input-registro {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.grupo-input-registro label {
+  font-size: 12px;
+  font-weight: bold;
+  color: #1e40af;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.input-registro {
+  padding: 12px 15px;
+  border: none;
+  border-bottom: 2px solid #e0e0e0;
+  border-radius: 0;
+  font-size: 14px;
+  background: #f5f5f5;
+  transition: all 0.3s ease;
+  font-family: inherit;
+}
+
+.input-registro:focus {
+  outline: none;
+  border-bottom-color: #1e40af;
+  background: #fff;
+}
+
+.textarea-registro {
+  border: 2px solid #e0e0e0;
+  border-radius: 6px;
+  padding: 12px 15px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.textarea-registro:focus {
+  border-color: #1e40af;
+}
+
+.btn-siguiente {
+  background: linear-gradient(135deg, #F5DA2E, #fce66d);
+  color: #1a1a1a;
+  border: none;
+  padding: 14px 40px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  align-self: center;
+  min-width: 200px;
+}
+
+.btn-siguiente:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(245, 218, 46, 0.3);
+}
+
+@media (max-width: 768px) {
+  .pasos-progreso-registro {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .numero-paso {
+    width: 50px;
+    height: 50px;
+    font-size: 18px;
+  }
+
+  .paso-item p {
+    font-size: 11px;
+  }
+
+  .tarjeta-registro {
+    padding: 25px;
+  }
+
+  .columnas-formulario {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .tarjeta-registro h2 {
+    font-size: 20px;
+  }
+
+  .btn-siguiente {
+    min-width: 150px;
+    padding: 12px 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pasos-progreso-registro {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .numero-paso {
+    width: 45px;
+    height: 45px;
+    font-size: 16px;
+  }
+
+  .registro-container {
+    padding: 0 15px 40px 15px;
+  }
+
+  .tarjeta-registro {
+    padding: 20px;
+  }
+
+  .columnas-formulario {
+    gap: 15px;
+  }
+
+  .columna-izquierda,
+  .columna-derecha {
+    gap: 15px;
+  }
+
+  .grupo-input-registro label {
+    font-size: 11px;
+  }
+
+  .input-registro {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .tarjeta-registro h2 {
+    font-size: 18px;
+  }
+
+  .btn-siguiente {
+    width: 100%;
+    min-width: unset;
+    padding: 12px 20px;
+    font-size: 12px;
+  }
+}

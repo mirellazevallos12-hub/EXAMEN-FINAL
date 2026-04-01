@@ -1,0 +1,301 @@
+/* DETALLES PROMOCIÓN */
+.detalles-page {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #FFFFFF;
+}
+
+.detalles-container {
+  flex-grow: 1;
+  padding: 40px 60px;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.detalles-header {
+  margin-bottom: 50px;
+}
+
+.btn-volver {
+  background: transparent;
+  border: 2px solid #F5DA2E;
+  color: #F5DA2E;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.btn-volver:hover {
+  background: #F5DA2E;
+  color: #1a1a1a;
+  transform: translateX(-4px);
+}
+
+.detalles-header h1 {
+  font-size: 48px;
+  font-weight: 900;
+  color: #1a1a1a;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.detalles-header p {
+  font-size: 18px;
+  color: #ff6b35;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.detalles-contenido {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.detalles-imagen {
+  width: 100%;
+  height: 400px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.detalles-info {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.info-card,
+.horarios-card,
+.resumen-card {
+  background: #FFFFFF;
+  border-radius: 12px;
+  padding: 28px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(30, 64, 175, 0.08);
+}
+
+.info-card h2,
+.horarios-card h2,
+.resumen-card h2 {
+  font-size: 20px;
+  font-weight: 900;
+  color: #1a1a1a;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 3px solid #ff6b35;
+  padding-bottom: 12px;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.info-item .label {
+  font-size: 12px;
+  font-weight: 800;
+  color: #1e40af;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.info-item .valor {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.horarios-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.horario-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 20px;
+  border: 2.5px solid #e8e8e8;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: white;
+}
+
+.horario-item:hover {
+  border-color: #ff8c42;
+  background: linear-gradient(135deg, #fff9f5 0%, #fffafb 100%);
+  transform: translateX(4px);
+}
+
+.horario-item.activo {
+  border-color: #ff6b35;
+  background: #FFFFFF;
+  box-shadow: 0 8px 24px rgba(255, 107, 53, 0.15);
+}
+
+.horario-tiempo {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.horario-tiempo .tiempo {
+  font-size: 18px;
+  font-weight: 900;
+  color: #1a1a1a;
+}
+
+.horario-tiempo .asientos {
+  font-size: 13px;
+  color: #2d3748;
+  font-weight: 600;
+}
+
+.horario-precio {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.horario-precio .precio-label {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ff6b35;
+}
+
+.horario-precio .precio-valor {
+  font-size: 24px;
+  font-weight: 900;
+  color: #ff6b35;
+}
+
+.resumen-card {
+  background: linear-gradient(135deg, #fff9f5 0%, #fffafb 100%);
+  border: 2px solid #ff6b35;
+}
+
+.resumen-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 2px solid #ff8c42;
+}
+
+.resumen-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.resumen-item .label {
+  font-size: 12px;
+  font-weight: 800;
+  color: #ff6b35;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.resumen-item .valor {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.resumen-item .valor.precio {
+  font-size: 24px;
+  color: #ff6b35;
+}
+
+.btn-comprar {
+  width: 100%;
+  padding: 16px 32px;
+  background: linear-gradient(135deg, #F5DA2E 0%, #fce66d 50%, #fde047 100%);
+  color: #1a1a1a;
+  border: none;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 10px 28px rgba(245, 218, 46, 0.3);
+}
+
+.btn-comprar:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(245, 218, 46, 0.45);
+}
+
+.btn-comprar:active {
+  transform: translateY(-1px);
+}
+
+@media (max-width: 1024px) {
+  .detalles-contenido {
+    grid-template-columns: 1fr;
+  }
+
+  .info-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .resumen-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .detalles-container {
+    padding: 20px;
+  }
+
+  .detalles-header h1 {
+    font-size: 32px;
+  }
+
+  .detalles-imagen {
+    height: 300px;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .horario-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .info-card,
+  .horarios-card,
+  .resumen-card {
+    padding: 16px;
+  }
+}

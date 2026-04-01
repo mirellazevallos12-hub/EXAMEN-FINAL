@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 600" width="100" height="120">
+  <defs>
+    <linearGradient id="headGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#2a3a52;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a2a42;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="eyeGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#5fb3ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2a8fd8;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Cabeza redondeada -->
+  <rect x="80" y="30" width="340" height="280" rx="50" fill="url(#headGradient)" stroke="#3a4a62" stroke-width="2"/>
+  
+  <!-- Pantalla frontal -->
+  <rect x="110" y="60" width="280" height="240" rx="40" fill="#1a4a7f" stroke="#2a8fd8" stroke-width="2"/>
+  
+  <!-- Ojo izquierdo grande -->
+  <g>
+    <circle cx="180" cy="140" r="50" fill="white"/>
+    <circle cx="180" cy="140" r="40" fill="url(#eyeGradient)"/>
+    <circle cx="180" cy="145" r="25" fill="white" opacity="0.8"/>
+    <circle cx="170" cy="130" r="12" fill="#1a2a42"/>
+    <ellipse cx="168" cy="128" rx="6" ry="7" fill="white" opacity="0.6"/>
+  </g>
+  
+  <!-- Ojo derecho grande -->
+  <g>
+    <circle cx="320" cy="140" r="50" fill="white"/>
+    <circle cx="320" cy="140" r="40" fill="url(#eyeGradient)"/>
+    <circle cx="320" cy="145" r="25" fill="white" opacity="0.8"/>
+    <circle cx="310" cy="130" r="12" fill="#1a2a42"/>
+    <ellipse cx="308" cy="128" rx="6" ry="7" fill="white" opacity="0.6"/>
+  </g>
+  
+  <!-- Sonrisa feliz -->
+  <path d="M 180 220 Q 250 280 320 220" stroke="#5fb3ff" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <path d="M 200 240 L 300 240" stroke="#5fb3ff" stroke-width="3" opacity="0.5"/>
+  
+  <!-- Audífono izquierdo -->
+  <g>
+    <rect x="50" y="100" width="35" height="50" rx="8" fill="#2a3a52" stroke="#3a8fd8" stroke-width="2"/>
+    <circle cx="67" cy="85" r="25" fill="#3a8fd8" opacity="0.8" stroke="#5fb3ff" stroke-width="2"/>
+    <circle cx="65" cy="82" r="5" fill="#5fb3ff"/>
+    <circle cx="70" cy="80" r="4" fill="#5fb3ff"/>
+  </g>
+  
+  <!-- Audífono derecho -->
+  <g>
+    <rect x="415" y="100" width="35" height="50" rx="8" fill="#2a3a52" stroke="#3a8fd8" stroke-width="2"/>
+    <circle cx="433" cy="85" r="25" fill="#3a8fd8" opacity="0.8" stroke="#5fb3ff" stroke-width="2"/>
+    <circle cx="435" cy="82" r="5" fill="#5fb3ff"/>
+    <circle cx="430" cy="80" r="4" fill="#5fb3ff"/>
+  </g>
+  
+  <!-- Banda blanca -->
+  <rect x="60" y="310" width="380" height="30" rx="8" fill="white" stroke="#3a4a62" stroke-width="2"/>
+  
+  <!-- Cuerpo -->
+  <rect x="110" y="340" width="280" height="200" rx="30" fill="url(#headGradient)" stroke="#3a4a62" stroke-width="2"/>
+  
+  <!-- Panel central azul en cuerpo -->
+  <rect x="140" y="360" width="220" height="160" rx="20" fill="#1a4a7f" stroke="#2a8fd8" stroke-width="2"/>
+  
+  <!-- Línea central -->
+  <line x1="250" y1="360" x2="250" y2="520" stroke="#2a8fd8" stroke-width="2"/>
+  
+  <!-- Botones en cuerpo - Azules -->
+  <circle cx="190" cy="410" r="12" fill="#3a8fd8" stroke="#5fb3ff" stroke-width="2"/>
+  <circle cx="310" cy="410" r="12" fill="#3a8fd8" stroke="#5fb3ff" stroke-width="2"/>
+  
+  <!-- Botones en cuerpo - Naranjas -->
+  <circle cx="190" cy="480" r="12" fill="#ff9900" stroke="#ffb84d" stroke-width="2"/>
+  <circle cx="310" cy="480" r="12" fill="#ff9900" stroke="#ffb84d" stroke-width="2"/>
+</svg>
