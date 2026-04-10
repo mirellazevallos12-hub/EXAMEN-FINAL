@@ -1,6 +1,8 @@
 .compra-entradas-page {
   min-height: 100vh;
   background: #ffffff;
+  position: relative;
+  overflow-x: hidden;
 }
 
 .compra-hero {
@@ -71,7 +73,7 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   border: 1px solid #f0f0f0;
   display: grid;
-  grid-template-columns: auto 1fr 1fr auto;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
   align-items: flex-end;
 }
@@ -109,6 +111,30 @@
   outline: none;
   border-color: #F5DA2E;
   background: #FFFFFF;
+}
+
+.btn-selector-destino {
+  padding: 10px 16px;
+  border: 2px solid #e8e8e8;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  background: #FFFFFF;
+  color: #1a1a1a;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: left;
+}
+
+.btn-selector-destino:hover {
+  border-color: #F5DA2E;
+  background: #fffef0;
+}
+
+.btn-selector-destino:focus {
+  outline: none;
+  border-color: #F5DA2E;
+  box-shadow: 0 0 0 3px rgba(245, 218, 46, 0.1);
 }
 
 .btn-buscar-viajes {

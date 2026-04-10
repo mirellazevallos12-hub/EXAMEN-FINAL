@@ -52,54 +52,11 @@ export default function ConfirmacionCompra({ onSwitchToLogin, onSwitchToHome, on
   const [showModal, setShowModal] = useState(null);
   const [verDetallesTerminal, setVerDetallesTerminal] = useState(false);
 
-  const handleDescargarPDF = () => {
-    alert('Generando y descargando comprobante PDF...\nComprobante: BOLETO-VLC-2024-001542.pdf');
-  };
-
-  const handleDescargarComprobante = () => {
-    const contenido = `
-COMPROBANTE DE COMPRA
-Número: ${confirmacionData.numeroReserva}
-Estado: ${confirmacionData.estado}
-
-VIAJE
-${confirmacionData.viaje.origen} → ${confirmacionData.viaje.destino}
-Fecha: ${confirmacionData.viaje.fecha}
-Salida: ${confirmacionData.viaje.horaSalida}
-Llegada: ${confirmacionData.viaje.horaLlegada}
-
-PASAJERO
-Nombres: ${confirmacionData.pasajero.nombres}
-Apellidos: ${confirmacionData.pasajero.apellidos}
-DNI: ${confirmacionData.pasajero.dni}
-
-ASIENTOS: ${confirmacionData.asientos.join(', ')}
-
-TOTAL: S/. ${confirmacionData.detalles.total}
-    `;
-    
-    const blob = new Blob([contenido], { type: 'text/plain' });
-    const url = window.URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `comprobante-${confirmacionData.numeroReserva}.txt`;
-    a.click();
-  };
-
-  const handleImprimirComprobante = () => {
-    window.print();
-  };
-
   const handleIrHistorial = () => {
     if (onAgregarAlHistorial) {
       onAgregarAlHistorial(confirmacionData);
     }
     onSwitchToHistorial();
-  };
-
-  const generateQRCode = (text) => {
-    // Simulación de QR - en producción usarías una librería como qrcode.react
-    return `https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${encodeURIComponent(text)}`;
   };
 
   return (
@@ -120,25 +77,14 @@ TOTAL: S/. ${confirmacionData.detalles.total}
       </div>
 
       <div className="confirmacion-container">
-        {/* CÓDIGO QR Y NÚMERO DE RESERVA */}
-        <div className="seccion-qr-reserva">
-          <div className="qr-container">
-            <h3>Código de Reserva</h3>
-            <img 
-              src={generateQRCode(confirmacionData.codigoQR)} 
-              alt="QR Reserva" 
-              className="qr-code"
-            />
-            <p className="qr-hint">Escanea este código en la terminal</p>
-          </div>
-          <div className="numero-reserva-grande">
-            <h2>{confirmacionData.numeroReserva}</h2>
-            <p>Estado: <span className="estado-badge">{confirmacionData.estado}</span></p>
-            <p className="numero-remis">Remis: {confirmacionData.numeroRemis}</p>
-            <p className="fecha-hora-compra">
-              Comprado: {confirmacionData.fechaCompra} a las {confirmacionData.horaCompra}
-            </p>
-          </div>
+        {/* NÚMERO DE RESERVA */}
+        <div className="numero-reserva-grande">
+          <h2>{confirmacionData.numeroReserva}</h2>
+          <p>Estado: <span className="estado-badge">{confirmacionData.estado}</span></p>
+          <p className="numero-remis">Remis: {confirmacionData.numeroRemis}</p>
+          <p className="fecha-hora-compra">
+            Comprado: {confirmacionData.fechaCompra} a las {confirmacionData.horaCompra}
+          </p>
         </div>
 
         {/* DETALLE DEL VIAJE */}
@@ -308,12 +254,6 @@ TOTAL: S/. ${confirmacionData.detalles.total}
 
         {/* ACCIONES AVANZADAS */}
         <div className="acciones-confirmacion-avanzada">
-          <button className="btn-descargar" onClick={handleDescargarComprobante}>
-            📥 DESCARGAR COMPROBANTE
-          </button>
-          <button className="btn-imprimir" onClick={handleImprimirComprobante}>
-            🖨️ IMPRIMIR
-          </button>
           <button className="btn-historial" onClick={handleIrHistorial}>
             📋 MIS COMPRAS
           </button>
@@ -330,7 +270,7 @@ TOTAL: S/. ${confirmacionData.detalles.total}
 
         {/* AVISO IMPORTANTE */}
         <div className="aviso-importante">
-          <p><strong>⚠️ IMPORTANTE:</strong> Conserva tu número de reserva <strong>{confirmacionData.numeroReserva}</strong> y <strong>presenta el código QR</strong> en el embarque. Llega 30 minutos antes de la salida. No se permiten reembolsos dentro de 24 horas del viaje.</p>
+          <p><strong>⚠️ IMPORTANTE:</strong> Conserva tu número de reserva <strong>{confirmacionData.numeroReserva}</strong>. Llega 30 minutos antes de la salida. No se permiten reembolsos dentro de 24 horas del viaje.</p>
         </div>
       </div>
 

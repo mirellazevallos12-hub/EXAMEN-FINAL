@@ -1,7 +1,12 @@
 {
-  "name": "codespaces-react",
+  "name": "busfinal",
   "version": "0.1.0",
+  "description": "Aplicación web de compra de boletos desarrollada con React y Vite.",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fernandorojas842003-code/busfinal.git"
+  },
   "type": "module",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",

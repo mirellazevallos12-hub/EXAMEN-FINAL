@@ -26,9 +26,13 @@ export default function Login({ onSwitchToRegister, onSwitchToHome, backgroundIm
 
     setError('');
     setSuccess('¡Login exitoso!');
+    
+    const usuarioData = 'Fernando Pérez';
+    localStorage.setItem('usuarioLogueado', JSON.stringify(usuarioData));
+    
     setTimeout(() => {
       setSuccess('');
-      onUsuarioLogueado('Fernando Pérez');
+      onUsuarioLogueado(usuarioData);
       setUsuario('');
       setCodigo('');
       onSwitchToHome();

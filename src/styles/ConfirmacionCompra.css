@@ -74,61 +74,21 @@
   padding: 0 20px;
 }
 
-/* SECCIÓN QR Y NÚMERO DE RESERVA */
-.seccion-qr-reserva {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 30px;
-  background: #FFFFFF;
+/* SECCIÓN NÚMERO DE RESERVA */
+.numero-reserva-grande {
+  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
   padding: 30px;
   border-radius: 15px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   margin-bottom: 30px;
-  align-items: center;
   border: 3px solid #1e40af;
-}
-
-.qr-container {
-  text-align: center;
-  min-width: 200px;
-}
-
-.qr-container h3 {
-  margin: 0 0 15px;
-  color: #1e40af;
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.qr-code {
-  width: 150px;
-  height: 150px;
-  border: 3px solid #1e40af;
-  border-radius: 10px;
-  background: #FFFFFF;
-  padding: 5px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
-}
-
-.qr-hint {
-  margin: 10px 0 0;
-  color: #666;
-  font-size: 12px;
-  font-weight: 500;
-}
-
-.numero-reserva-grande {
-  background: linear-gradient(135deg, #f0f4ff 0%, #f9fafb 100%);
-  padding: 25px;
-  border-radius: 10px;
-  border-left: 5px solid #ff6b35;
+  color: white;
 }
 
 .numero-reserva-grande h2 {
   margin: 0 0 10px;
   font-size: 32px;
-  color: #ff6b35;
+  color: white;
   font-weight: 700;
 }
 
@@ -142,13 +102,13 @@
 }
 
 .numero-remis {
-  color: #666;
+  color: rgba(255, 255, 255, 0.9);
   font-size: 14px;
   margin: 10px 0 5px;
 }
 
 .fecha-hora-compra {
-  color: #999;
+  color: rgba(255, 255, 255, 0.8);
   font-size: 13px;
   margin: 0;
 }
@@ -543,8 +503,6 @@
   margin: 35px 0;
 }
 
-.btn-descargar,
-.btn-imprimir,
 .btn-historial,
 .btn-cancelar,
 .btn-inicio {
@@ -557,28 +515,6 @@
   transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-}
-
-.btn-descargar {
-  background: linear-gradient(135deg, #F5DA2E 0%, #fce66d 100%);
-  color: #1a1a1a;
-  box-shadow: 0 4px 12px rgba(245, 218, 46, 0.3);
-}
-
-.btn-descargar:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(245, 218, 46, 0.4);
-}
-
-.btn-imprimir {
-  background: linear-gradient(135deg, #F5DA2E 0%, #fce66d 100%);
-  color: #1a1a1a;
-  box-shadow: 0 4px 12px rgba(245, 218, 46, 0.3);
-}
-
-.btn-imprimir:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(245, 218, 46, 0.4);
 }
 
 .btn-historial {
@@ -781,15 +717,6 @@
     height: 80px;
   }
 
-  .seccion-qr-reserva {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .qr-container {
-    order: -1;
-  }
-
   .dos-columnas {
     grid-template-columns: 1fr;
   }
@@ -842,15 +769,6 @@
     padding: 18px;
   }
 
-  .seccion-qr-reserva {
-    padding: 20px;
-  }
-
-  .qr-code {
-    width: 120px;
-    height: 120px;
-  }
-
   .numero-reserva-grande h2 {
     font-size: 20px;
   }
@@ -859,8 +777,6 @@
     grid-template-columns: 1fr;
   }
 
-  .btn-descargar,
-  .btn-imprimir,
   .btn-historial,
   .btn-cancelar,
   .btn-inicio {
@@ -891,8 +807,6 @@
     color: #1e40af;
   }
 
-  .btn-descargar,
-  .btn-imprimir,
   .btn-historial,
   .btn-cancelar,
   .btn-inicio,

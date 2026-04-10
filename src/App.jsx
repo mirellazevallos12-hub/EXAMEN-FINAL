@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.css';
 import Login from './pages/Login';
 import Register from './pages/Register';
@@ -22,8 +22,19 @@ function App() {
   const [backgroundImage, setBackgroundImage] = useState(
     'linear-gradient(135deg, #ff9900 0%, #8b4513 50%, #2c3e50 100%)'
   );
-  const [usuarioLogueado, setUsuarioLogueado] = useState(null);
+  const [usuarioLogueado, setUsuarioLogueado] = useState(() => {
+    const usuario = localStorage.getItem('usuarioLogueado');
+    return usuario ? JSON.parse(usuario) : null;
+  });
   const [historialCompras, setHistorialCompras] = useState([]);
+  
+  // Restaurar sesión desde localStorage al cargar
+  useEffect(() => {
+    const usuario = localStorage.getItem('usuarioLogueado');
+    if (usuario) {
+      setUsuarioLogueado(JSON.parse(usuario));
+    }
+  }, []);
   
   const handleAgregarAlHistorial = (compra) => {
     setHistorialCompras(prev => [compra, ...prev]);
@@ -31,6 +42,7 @@ function App() {
   
   const handleLogout = () => {
     setUsuarioLogueado(null);
+    localStorage.removeItem('usuarioLogueado');
     setCurrentPage('home');
   };
 

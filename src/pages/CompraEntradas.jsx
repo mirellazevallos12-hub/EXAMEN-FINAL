@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import EncabezadoPrincipal from '../components/EncabezadoPrincipal';
 import ChatAssistant from '../components/ChatAssistant';
+import SelectorDestinos from '../components/SelectorDestinos';
 import '../styles/CompraEntradas.css';
 
 export default function CompraEntradas({ onSwitchToLogin, onSwitchToHome, onSwitchToPromociones, onSwitchToHistorial, onNuestroServicio, onSelectAsientos }) {
@@ -8,6 +9,8 @@ export default function CompraEntradas({ onSwitchToLogin, onSwitchToHome, onSwit
   const [returnDate, setReturnDate] = useState('');
   const [tripType, setTripType] = useState('ida');
   const [selectedTravel, setSelectedTravel] = useState(null);
+  const [selectedDestino, setSelectedDestino] = useState(null);
+  const [mostrarSelectorDestinos, setMostrarSelectorDestinos] = useState(false);
 
   const rutasDisponibles = [
     {
@@ -53,6 +56,12 @@ export default function CompraEntradas({ onSwitchToLogin, onSwitchToHome, onSwit
     }
   };
 
+  const handleSelectDestino = (destino) => {
+    console.log('Destino seleccionado:', destino);
+    setSelectedDestino(destino);
+    setMostrarSelectorDestinos(false);
+  };
+
   return (
     <div className="compra-entradas-page">
       <EncabezadoPrincipal 
@@ -91,6 +100,16 @@ export default function CompraEntradas({ onSwitchToLogin, onSwitchToHome, onSwit
         </div>
 
         <div className="filtros-viajes">
+          <div className="filtro-grupo">
+            <label>Destino:</label>
+            <button 
+              className="btn-selector-destino"
+              onClick={() => setMostrarSelectorDestinos(true)}
+            >
+              {selectedDestino ? selectedDestino.nombre : '📍 Selecciona un destino'}
+            </button>
+          </div>
+
           <div className="filtro-grupo">
             <label>
               <input 
@@ -191,6 +210,13 @@ export default function CompraEntradas({ onSwitchToLogin, onSwitchToHome, onSwit
           </div>
         </div>
       </div>
+
+      {mostrarSelectorDestinos && (
+        <SelectorDestinos 
+          onSelectDestino={handleSelectDestino}
+          onClose={() => setMostrarSelectorDestinos(false)}
+        />
+      )}
 
       <ChatAssistant page="compra-entradas" />
     </div>
